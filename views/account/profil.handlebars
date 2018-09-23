@@ -1,0 +1,110 @@
+{{> _header}} {{> _banner}}
+<!-- BLOG -->
+<div class="detail-wrapper">
+  <div class="container">
+    <div class="row padd-90">
+      <div class="col-xs-12 col-md-8 col-md-push-4">
+        <div class="account">
+          <div class="account-header">
+            <h2 class="account-title">Profil</h2>
+          </div>
+          {{> _msg}} {{> _errors}}
+          <form class="f-login-form" method="POST" action="/account/profil?_method=put">
+            <div class="row">
+              <div class="box col-md-12 ">
+                <input value="put" name="_method " type="hidden">
+                <div class="form-group">
+                  <label class="color-grey-8">Nom</label>
+                  <div class="input-style-1 b-50 type-2 color-2">
+                    <input value="{{user.FirstName}}" name="nom" required="" type="text">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="color-grey-8">Prenom</label>
+                  <div class="input-style-1 b-50 type-2 color-2">
+                    <input value="{{user.LastName}}" name="prenom" required="" type="text">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="color-grey-8">Adresse d'email</label>
+                  <div class="input-style-1 b-50 type-2 color-2">
+                    <input value="{{user.email}}" name="email" required="" type="text">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="color-grey-8">Telephone</label>
+                  <div class="input-style-1 b-50 type-2 color-2">
+                    <input value="{{user.telephone}}" name="telephone" type="text">
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label class="color-grey-8">Date de naissance</label>
+
+                  <div class="input-style-1 b-50 type-2 color-2">
+                    <img src="/img/calendar_icon_grey.png" alt="">
+                    <input type="text" value="{{user.Dateofbirth}}" name="Dateofbirth" placeholder="" class="datepicker">
+                  </div>
+
+
+                </div>
+                <div class="form-group">
+                  <label class="color-grey-8">Pays</label>
+
+
+
+                  <div class="input-style-1 b-50 type-2 color-2">
+                    <select class="form-control" name="country" id="country">
+                      <option value="" selected="">Veuillez choisir votre pays</option>
+                      {{!-- {{#if !user.country}} {{else}}
+                      <option value={{user.country}} selected="">{{user.country}}</option>
+                      {{/if}} --}} {{#each countries}} {{!-- {{#if_eq this 'France'}}
+                      <option selected="" value={{ this }}>{{ this }}</option>
+                      {{else}} --}}
+                      <option value={{ this }}>{{ this }}</option>
+                      {{!-- {{/if_eq}} --}} {{/each}}
+                    </select>
+                    <input value="{{user.country}}" id="usercountry" name="usercountry" type="hidden">
+
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="color-grey-8">Ville</label>
+                  <div class="input-style-1 b-50 type-2 color-2">
+                    <select class="form-control" name="city" id="city">
+                      <option value="">Veuillez choisir votre ville</option>
+                    </select>
+                    <input value="{{user.city}}" id="usercity" name="usercity" type="hidden">
+                  </div>
+                </div>
+                <div class="row">
+
+                  <div class="col-md-6">
+                    <a href="/account/overview" class="c-button b-20 full color-blue-2 brd-grey hv-blue-2">
+                      <span>Annuler</span>
+                    </a>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="submit" class=" c-button full b-20 bg-dr-blue-2 hv-dr-blue-2-o" value="Enregistrer le profil">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      {{> _sidebar}}
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(function () {
+    $("#country").val($("#usercountry").val());
+    $("#country").trigger("change");
+  });
+</script>

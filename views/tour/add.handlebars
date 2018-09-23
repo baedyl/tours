@@ -1,0 +1,159 @@
+{{> _head}} {{> _header}} {{> _banner}}
+<!-- DETAIL WRAPPER -->
+<div class="detail-wrapper" style="margin: 100px;">
+	<div class="container">
+       	<div class="row padd-90">
+       		<div class="col-xs-12 col-md-8">
+				<form class="simple-from" action="/tour" method="POST">
+					<div class="simple-group">
+						<h3 class="small-title">Add Tour</h3>
+						<div class="row">
+							<div class="col-xs-6 col-sm-6">
+								<div class="form-block type-2 clearfix">
+									<div class="form-label color-dark-2">Title</div>
+									<div class="input-style-1 b-50 brd-0 type-2 color-3">
+										<input name="title" type="text" placeholder="Enter title of tour" required>
+									</div>
+								</div>							
+							</div>
+										
+							<div class="col-xs-6 col-sm-6">
+								<div class="form-block type-2 clearfix">
+									<div class="form-label color-dark-2">Description</div>
+									<div class="input-style-1 b-50 brd-0 type-2 color-3">
+										<input name="description" type="text" placeholder="Enter description">
+									</div>
+								</div>							
+							</div>
+							<div class="col-xs-12 col-sm-6">
+								<div class="form-block type-2 clearfix">
+									<div class="form-label color-dark-2">Duration (Days)</div>
+									<!--div class="input-style-1 b-50 brd-0 type-2 color-3">
+										<input name="duration" id="duration" type="text" placeholder="Enter number of days">
+									</div-->
+                                                      <div class="field_wrapper">
+                                                            <div class="form-group">
+                                                                  <div class="input-style-1 b-50 brd-0 type-2 color-3">
+                                                                        <input name="duration" id="duration" type="text" placeholder="Enter number of days">
+                                                                  </div>
+                                                                  <!--input type="text" name="days" id="days" value="" class="form-control input-md"/>
+                                                                  <input type="text" name="field_name[]" value="" class="form-control input-md"/>
+                                                                  <a href="javascript:void(0);" class="add_button c-button bg-dr-blue-2 hv-dr-blue-2-o" title="Add field">Ajouter Jour</a-->
+                                                            </div>
+                                                      </div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6">
+								<div class="form-block type-2 clearfix">
+								      <a href="javascript:void(0);" class="add_button c-button bg-dr-blue-2 hv-dr-blue-2-o" title="Add field">+ Jour</a>
+
+								</div>
+							</div>
+                                          
+							
+							
+							<!--div class="col-xs-12">
+								<div class="confirm-terms">
+									<div class="input-entry color-3">
+										<input class="checkbox-form" id="text-1" type="checkbox" name="checkbox" value="climat control">
+										<label class="clearfix" for="text-1">
+											<span class="sp-check"><i class="fa fa-check"></i></span>
+											<span class="checkbox-text"> I want to receive <a class="color-dr-blue-2 link-dark-2" href="#">Let’s Travel</a> promotional offers in the future</span>
+										</label>
+									</div>
+								</div>							
+							</div-->
+						</div>
+					</div>
+
+					<input type="submit" class="c-button bg-dr-blue-2 hv-dr-blue-2-o" value="Add tour">
+				</form>
+       		</div>
+       		<div class="col-xs-12 col-md-4">
+       			<div class="right-sidebar">
+
+					<div class="popular-tours bg-grey-2">
+						<h4 class="color-dark-2">popular tours</h4>
+						<div class="hotel-small style-2 clearfix">
+							<a class="hotel-img black-hover" href="#">
+								<img class="img-responsive radius-0" src="img/home_9/cruise_1.jpg" alt="">
+								<div class="tour-layer delay-1"></div>        						
+							</a>
+							<div class="hotel-desc">
+		    					<h5><span class="color-dark-2"><strong>$273</strong>/ person</span></h5>
+		    					<h4>HAWAIAN CRUISES</h4>
+								<div class="hotel-loc tt"><strong>19.07 - 26.07 / 7</strong> nights</div>
+							</div>
+						</div>
+						<div class="hotel-small style-2 clearfix">
+							<a class="hotel-img black-hover" href="#">
+								<img class="img-responsive radius-0" src="img/home_9/cruise_2.jpg" alt="">
+								<div class="tour-layer delay-1"></div>        						
+							</a>
+							<div class="hotel-desc">
+		    					<h5><span class="color-dark-2"><strong>$273</strong>/ person</span></h5>
+		    					<h4>TAHITI CRUISES</h4>
+								<div class="hotel-loc tt"><strong>19.07 - 26.07 / 7</strong> nights</div>
+							</div>
+						</div>
+						<div class="hotel-small style-2 clearfix">
+							<a class="hotel-img black-hover" href="#">
+								<img class="img-responsive radius-0" src="img/home_9/cruise_3.jpg" alt="">
+								<div class="tour-layer delay-1"></div>        						
+							</a>
+							<div class="hotel-desc">
+		    					<h5><span class="color-dark-2"><strong>$273</strong>/ person</span></h5>
+		    					<h4>ASIA CRUISES</h4>
+								<div class="hotel-loc tt"><strong>19.07 - 26.07 / 7</strong> nights</div>
+							</div>
+						</div>											
+					</div>
+
+					<div class="sidebar-text-label bg-dr-blue-2 color-white">useful information</div>
+
+					<div class="help-contact bg-grey-2">
+						<h4 class="color-dark-2">Need Help?</h4>
+						<p class="color-grey-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<a class="help-phone color-dark-2 link-dr-blue-2" href="tel:0200059600"><img src="img/detail/phone24-dark-2.png" alt="">020 00 59 600</a>
+						<a class="help-mail color-dark-2 link-dr-blue-2" href="mailto:let’s_travel@world.com"><img src="img/detail/letter-dark-2.png" alt="">let’s_travel@world.com</a>
+					</div>										      				
+       			</div>       			
+       		</div>
+       	</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+      //Input fields increment limitation
+      var maxField = 0;
+      
+      var addButton = $('.add_button'); //Add button selector
+      var wrapper = $('.field_wrapper'); //Input field wrapper
+      var x = 1; //Initial field counter is 1
+      var label = '<div class="col-xs-6 col-sm-6"><div class="form-label color-dark-2">Jour ';
+      var fieldHTML_1 = '</div><div class="input-style-1 b-50 brd-0 type-2 color-3"><input type="text" name="day_'; //New input field html 
+      var fieldHTML_2 = '"placeholder="Entrer description"/><a href="javascript:void(0);" class="remove_button c-button bg-dr-blue-2 hv-dr-blue-2-o"> Supprimer</a></div></div>'
+      
+      //Once add button is clicked
+      $(addButton).click(function(){
+            maxField = Number(document.getElementById('duration').value); 
+            //Check maximum number of input fields
+            if(x < maxField){ 
+                  $(wrapper).append(label + x + fieldHTML_1  + fieldHTML_2); //Add field html
+                  x++; //Increment field counter
+            }
+            
+      });
+      
+      //Once remove button is clicked
+      $(wrapper).on('click', '.remove_button', function(e){
+            e.preventDefault();
+            $(this).parent('div').parent('div').remove(); //Remove field html
+            x--; //Decrement field counter
+      });
+});
+</script>
+
+

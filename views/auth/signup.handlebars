@@ -1,0 +1,62 @@
+<div class="not-found">
+  <img class="center-image" src="/img/special/bg-2.jpg" alt="">
+  <div class="register-box">
+    <div class="f-register-content">
+      <div class="f-register-header">
+        <div class="f-register-title color-dr-blue-2">Bonjour , heureux de vous rencontrer !</div>
+        <div class="f-register-desc color-grey">Veuillez remplir ces champs</div>
+      </div>
+      {{> _msg}} {{> _errors}}
+      <form class="f-register-form" action="/auth/signup" method="POST">
+
+
+        <div class="input-style-1 b-50 type-2 color-5">
+          <input type="text" name="nom" placeholder="Enter votre nom" required>
+        </div>
+        <div class="input-style-1 b-50 type-2 color-5">
+          <input type="text" name="prenom" placeholder="Enter votre prenom" required>
+        </div>
+
+
+        <div class="input-style-1 b-50 type-2 color-5">
+          <input type="text" name="email" placeholder="Enter votre email" required>
+        </div>
+        <div class="input-style-1 b-50 type-2 color-5">
+          <input type="password" name="password" placeholder="Enter votre mot de passe" required>
+        </div>
+        <div class="input-style-1 b-50 type-2 color-5">
+          <input type="password" name="password2" placeholder="Comfirmer votre mot de passe" required>
+        </div>
+        <div class="checkbox-group">
+
+        </div>
+        <input type="submit" class="login-btn c-button full b-60 bg-dr-blue-2 hv-dr-blue-2-o" value="Continuer">
+        <h4 class="text-center color-dark-2-light ">ou</h4>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <a href="#" class="c-button full b-60 bg-blue-7 hv-blue-7-o">
+              <i class="fa fa-facebook"></i>
+              <span>Continuer avec facebook</span>
+            </a>
+          </div>
+
+          <div class="col-xs-12 col-sm-6">
+            <a href="/auth/google" class="c-button full b-60 bg-aqua hv-red-3-o">
+              <i class="fa fa-google-plus"></i>
+              <span>Continuer avec Google</span>
+            </a>
+          </div>
+        </div>
+
+      </form>
+    </div>
+    {{!--
+    <div class="not-found-title">ouch!</div>
+    <div class="not-found-message">sorry the page you are looking for does not exist</div>
+    <a href="#" class="c-button b-60 bg-white hv-white-o">
+      <span>view more</span>
+    </a> --}}
+
+  </div>
+</div>

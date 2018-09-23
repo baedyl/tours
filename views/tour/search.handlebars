@@ -1,0 +1,18 @@
+{{> _header}} {{> _banner}}
+
+<div class="bg-dark type-3">
+  <form class="" >
+    <input class="" required="" placeholder="SEARCH" type="text" name="search">
+    <input class="tags-b" value="" type="submit">
+  </form>
+
+  {{#if tours}}
+      <div>
+    {{#each tours}}
+      <p>{{@index}}. {{this}}</p>
+    {{/each}}
+    </div>
+  {{else}}
+    <p> "No tour found"</p>
+  {{/if}}
+</div>

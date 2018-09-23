@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from demo.nrgthemes.com/projects/travel/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Aug 2018 14:58:49 GMT -->
+
+{{> _head}}
+
+<body data-color="theme-8">
+
+
+
+  {{> _loading}}
+
+  <img class="center-image" src="/img/special/bg-1.jpg" alt="">
+
+  <div class="container">
+    <div class="login-fullpage">
+      <div class="row">
+        <div class="login-logo">
+          <img class="center-image" src="/img/special/bg-4.jpg" alt="">
+        </div>
+        <div class="col-xs-12 col-sm-7">
+          <div class="f-login-content">
+            <div class="f-login-header">
+              <div class="f-login-title color-dr-blue-2">Bon retour parmi nous</div>
+              <div class="f-login-desc color-grey">Veuillez vous connecter à votre compte</div>
+            </div>
+            {{> _msg}} {{> _errors}}
+            <form class="f-login-form" method="POST" action="/auth/mail">
+              <div class="input-style-1 b-50 type-2 color-5">
+                <input name="email" type="text" placeholder="Enter votre email" required>
+              </div>
+              <div class="input-style-1 b-50 type-2 color-5">
+                <input name="password" type="password" placeholder="Enter votre mot de passe" required>
+              </div>
+              <div class="checkbox-group">
+
+                {{!--
+                <div class="input-entry color-3">
+                  <input class="checkbox-form" id="text-2" type="checkbox" name="checkbox" value="climat control">
+                  <label class="clearfix" for="text-2">
+                    <span class="sp-check">
+                      <i class="fa fa-check"></i>
+                    </span>
+                    <span class="checkbox-text">Remember me</span>
+                  </label>
+                </div> --}}
+              </div>
+              <input type="submit" class="login-btn c-button full b-60 bg-dr-blue-2 hv-dr-blue-2-o" value="Continuer">
+              <h4 class="text-center color-dark-2-light ">ou
+                </>
+
+                <div class="row">
+                  <div class="col-xs-12 col-sm-6">
+                    <a href="#" class="c-button full b-60 bg-blue-7 hv-blue-7-o">
+                      <i class="fa fa-facebook"></i>
+                      <span>Continuer avec facebook</span>
+                    </a>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6">
+                    <a href="/auth/google" class="c-button full b-60 bg-aqua hv-red-3-o">
+                      <i class="fa fa-google-plus"></i>
+                      <span>Continuer avec Google</span>
+                    </a>
+                  </div>
+                </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="full-copy">© 2015 All rights reserved. let’stravel</div>
+  </div>
+
+  {{> _scripts}}
+</body>
+
+
+</html>

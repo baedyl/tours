@@ -1,0 +1,60 @@
+<div class="col-xs-12 col-md-4 col-md-pull-8">
+	<div class="right-sidebar">
+		{{!--
+		<div class="sidebar-block type-2">
+			<div class="widget-search clearfix">
+				<form>
+					<div class="input-style-1 b-50 brd-0 type-2 color-3">
+						<input type="text" placeholder="Enter what you want to find">
+					</div>
+					<input class="widget-submit" type="submit" value="">
+				</form>
+			</div>
+		</div> --}}
+		<div class="sidebar-block type-2">
+			<img class="account-img" src="/img/detail/comment_1.jpg" alt="">
+			<ul class="sidebar-category color-5">
+				<li id="1">
+					<a href="/account/overview">Vue d'ensemble du compte
+					</a>
+				</li>
+				<li id="2">
+					<a href="/account/profil">Modifier votre profile
+					</a>
+				</li>
+				<li id="3">
+					<a href="/account/change-password">Mot de passe
+					</a>
+				</li>
+				<li id="4">
+					<a href="/account/history">Historique des reservations
+					</a>
+				</li>
+				<li id="5">
+					<a href="/account/yourtrips">Vos voyages
+					</a>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function () {
+		if (window.location.pathname.includes("overview")) {
+			$("#1").addClass('active');
+		}
+		if (window.location.pathname.includes("profil")) {
+			$("#2").addClass('active');
+		}
+		if (window.location.pathname.includes("password")) {
+			$("#3").addClass('active');
+		}
+		if (window.location.pathname.includes("history")) {
+			$("#4").addClass('active');
+		}
+		if (window.location.pathname.includes("yourtrips")) {
+			$("#5").addClass('active');
+		}
+	});
+</script>

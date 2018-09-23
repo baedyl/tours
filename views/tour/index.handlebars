@@ -1,0 +1,51 @@
+
+                    {{> _header}} {{> _banner}}
+					
+  					<div class="list-content clearfix" style="margin: 100px;">
+						{{#each tours}}
+  						<div class="list-item-entry">
+					        <div class="hotel-item style-10 bg-white">
+					        	<div class="table-view">
+						          	<div class="radius-top cell-view">
+						          	 	<img src="img/tour_list/flight_grid_1.jpg" alt="">	          	 	 
+						          	</div>
+						          	<div class="title hotel-middle cell-view">
+							            <h5><a href="/tour/edit/{{id}}" class="btn-floating halfway-fab red">Edit Tour</a></h5>
+							            <h6 class="color-grey-3 list-hidden">one way flights</h6>
+						          	    <h4><b>{{title}}</b></h4>
+						          	    <p class="list-hidden">Book now and <span class="color-red-3">save 30%</span></p>
+						          	    <div class="fi_block grid-hidden row row10">
+						          	    	{{description}}
+						          	    </div>
+							            <a href="#" class="c-button b-40 bg-red-3 hv-red-3-o">book now</a>
+							            <a href="/tour/show/{{id}}" class="c-button b-40 color-grey-3 hv-o fr"><img src="img/flag_icon_grey.png" alt="">view more</a>
+						            	<a href="/tour/delete/{{id}}" class="c-button b-40 color-red-3 hv-o fr">X</a>
+									</div>
+						            <div class="title hotel-right clearfix cell-view grid-hidden">
+					          	        <div class="hotel-right-text color-dark-2">Duration</div>
+					          	        <div class="hotel-right-text color-dark-2">{{duration}} days</div>
+						            </div>						            
+					            </div>
+					        </div>					
+  						</div>
+  						{{else}}
+							<p>No Tours found</p>
+						{{/each}} 						 						   						 						  						  						  						  						  						   						  						  						  						  						 						   						 						   						 						  						   						 						  						
+  					</div>
+
+  					<div class="c_pagination clearfix padd-120">
+						<a href="#" class="c-button b-40 bg-red-3 hv-red-3-o fl">prev page</a>
+						<a href="#" class="c-button b-40 bg-red-3 hv-red-3-o fr">next page</a>
+						<ul class="cp_content color-4">
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">...</a></li>
+							<li><a href="#">10</a></li>
+						</ul>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>

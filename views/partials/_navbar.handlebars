@@ -1,0 +1,159 @@
+<div class="top-header-bar bg-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-header-block-social fl e-mail">
+
+          <a class="color-dark-2-light" href="tel:">
+            <img src="/img/facebook.png" alt="">
+          </a>
+          <a class="color-dark-2-light" href="tel:">
+            <img src="/img/instagram.png" alt="">
+          </a>
+        </div>
+
+        <div class="top-header-block fl e-mail">
+          <img src="/img/phone_icon_blue.png" alt="">
+          <a class="color-dark-2-light" href="tel:">contact with us: 0369 09 01</a>
+        </div>
+        <div class="top-header-block fl phone">
+          <img src="/img/mail_icon_blue.png" alt="">
+          <a class="color-dark-2-light" href="mailto:letstravel@letstravel.com">e-mail: let’stravel@let’stravel.com</a>
+        </div>
+        <div class="fr">
+
+          <div class="top-header-block fl search">
+            <img class="search-img" src="/img/search_icon_small_blue.png" alt="">
+            <div class="search-popup">
+              <div class="s_close"></div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                    <form class="s_form" action="/tour/recherche">
+                      <input class="s_input" required="" placeholder="SEARCH TOUR" type="text" name="search">
+                      <input class="s_submit" value="" type="submit">
+                      <div style="position: relative;width: 100%;top: -1px;">
+                        <div class="border" id="search-results">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{!-- <div class="top-header-block fl card">
+            <img class="card-icon" src="img/shop_icon_blue.png" alt="">
+            <a class="card-link color-dark-2-light" href="#">cart</a>
+            <div class="cart-popup">
+              <div class="cart_close"></div>
+              <h3 class="cart-title color-dark-2">Cart</h3>
+              <div class="hotel-small style-2 clearfix">
+                <a class="hotel-img black-hover" href="#">
+                  <img class="img-responsiv" src="img/home_1/dropdown_item_1.jpg" alt="">
+                  <div class="tour-layer delay-1"></div>
+                </a>
+                <div class="hotel-desc">
+                  <h5 class="color-dark-2">
+                    <strong>$273</strong> / person</h5>
+                  <h4 class="color-dark-2">HAWAIAN CRUISES</h4>
+                  <div class="hotel-loc tt">
+                    <strong>9.07 - 26.07 / 7</strong> nights</div>
+                  <div class="item-remove bg-blue-2 hv-o"></div>
+                </div>
+              </div>
+              <div class="hotel-small style-2 clearfix">
+                <a class="hotel-img black-hover" href="#">
+                  <img class="img-responsiv" src="img/home_1/dropdown_item_3.jpg" alt="">
+                  <div class="tour-layer delay-1"></div>
+                </a>
+                <div class="hotel-desc">
+                  <h5 class="color-dark-2">
+                    <strong>$273</strong> / person</h5>
+                  <h4 class="color-dark-2">TAHITI CRUISES</h4>
+                  <div class="hotel-loc tt">
+                    <strong>9.07 - 26.07 / 7</strong> nights</div>
+                  <div class="item-remove bg-blue-2 hv-o"></div>
+                </div>
+              </div>
+              <div class="hotel-small style-2 clearfix">
+                <a class="hotel-img black-hover" href="#">
+                  <img class="img-responsiv" src="img/home_1/dropdown_item_4.jpg" alt="">
+                  <div class="tour-layer delay-1"></div>
+                </a>
+                <div class="hotel-desc">
+                  <h5 class="color-dark-2">
+                    <strong>$273</strong> / person</h5>
+                  <h4 class="color-dark-2">TAHITI CRUISES</h4>
+                  <div class="hotel-loc tt">
+                    <strong>9.07 - 26.07 / 7</strong> nights</div>
+                  <div class="item-remove bg-blue-2 hv-o"></div>
+                </div>
+              </div>
+              <h4 class="cart-total color-dark-2 text-center">total:
+                <span>$819</span>
+              </h4>
+              <a href="#" class="c-button b-40 full bg-blue-2 hv-bg-blue-2-o">
+                <span>checkout</span>
+              </a>
+              <a href="#" class="c-button b-40 full color-blue-2 brd-grey hv-blue-2">
+                <span>view cart</span>
+              </a>
+            </div>
+          </div> --}}
+          {{#if user}}
+          <div class="top-header-block fl card">
+            <img class="profile-icon" src="/img/user.png" alt="">
+            <a class="profile-link color-dark-2-light" href="#">{{user.FirstName}}</a>
+            <div class="profile-popup">
+              <div class="profile_close"></div>
+              <div class="profile-title ">
+                <h4 class="color-dark-2">Votre Profile</h4>
+                {{!--
+                <p class="color-dark-2-light">Et suivez vos réservations</p> --}}
+              </div>
+
+              <a href="/account/overview" class="c-button b-40 full color-blue-2 brd-grey hv-blue-2">
+                <span>Compte</span>
+              </a>
+              <a href="/auth/logout" class="c-button b-40 full color-blue-2 brd-grey hv-blue-2">
+                <span>Deconnexion</span>
+              </a>
+
+            </div>
+          </div>
+          {{else}}
+          <div class="top-header-block fl card">
+            <img class="profile-icon" src="/img/user.png" alt="">
+            <a class="profile-link color-dark-2-light" href="#">S'inscrire</a>
+            <div class="profile-popup">
+              <div class="profile_close"></div>
+              <!--h4 class="profile-title color-dark-2">Votre profile</h4-->
+              <div class="profile-title ">
+                <h4 class="color-dark-2">Rejoinez nous</h4>
+                <p class="color-dark-2-light">Et suivez vos réservations</p>
+              </div>
+
+              <a href="/auth/signup" class="c-button b-40 full color-blue-2 brd-grey hv-blue-2">
+                <span>S'inscrire</span>
+              </a>
+              <p class="profile-title color-dark-2-light ">ou</p>
+              <a href="/auth/google" class="c-button b-40 full bg-blue-2 hv-bg-blue-2-o">
+                <span>Continuer avec Google</span>
+              </a>
+            </div>
+          </div>
+          <div class="top-header-block fl e-mail">
+          <img src="/img/user.png" alt="">
+          <a class="color-dark-2-light" href="/auth/mail">Se connecter</a>
+        </div>
+          
+          {{/if}}
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
