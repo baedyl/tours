@@ -27,20 +27,33 @@
 							</div>
 							<div class="col-xs-12 col-sm-6">
 								<div class="form-block type-2 clearfix">
+									<div class="form-label color-dark-2">Price </div>
+									<div class="input-style-1 b-50 brd-0 type-2 color-3">
+										<input name="price" type="text" value="{{tour.price}}">
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6">
+								<div class="form-block type-2 clearfix">
 									<div class="form-label color-dark-2">Duration (Days)</div>
 									<div class="input-style-1 b-50 brd-0 type-2 color-3">
 										<input name="duration" type="text" value="{{tour.duration}}">
 									</div>
 								</div>
 							</div>
-							<div class="col-xs-12 col-sm-6">
-								<div class="form-block type-2 clearfix">
-									<div class="form-label color-dark-2">Price ? </div>
-									<div class="input-style-1 b-50 brd-0 type-2 color-3">
-										<input name="price" type="text" placeholder="Enter Price">
+							{{#each tour.days}}
+							
+								<div class="col-xs-12 col-sm-6">
+									<div class="form-block type-2 clearfix">
+										<div class="form-label color-dark-2">Day x</div>
+										<div class="input-style-1 b-50 brd-0 type-2 color-3">
+											<input name="duration" type="text" value="{{tour.days}}">
+										</div>
 									</div>
 								</div>
-							</div>
+							{{/each}}
+							
+							
 							
 							<!--div class="col-xs-12">
 								<div class="confirm-terms">

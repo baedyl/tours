@@ -81,6 +81,7 @@ router.post('/', upload.single('picture'), (req, res) => {
         const newTour = {
             title: req.body.title,
             description: req.body.description,
+            price: req.body.price,
             duration: req.body.duration,
             days: dayyys,
             img: {
@@ -143,6 +144,7 @@ router.put('/:id', (req, res) => {
         
         // New values
         tour.title = req.body.title;
+        tour.price = req.body.price;
         tour.description = req.body.description;
         tour.duration = req.body.duration;
         

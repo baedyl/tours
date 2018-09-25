@@ -13,6 +13,9 @@ const TourSchema = new Schema({
   duration: {
     type: Number
   },
+  price: {
+    type: Number
+  },
   days: [ String ],
   img: { 
     data: Buffer,

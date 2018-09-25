@@ -1,54 +1,217 @@
 
                     {{> _header}} {{> _banner}}
-					
-  					<div class="list-content clearfix" style="margin: 100px;">
-						<label class="radio-inline">
-							<input type="radio" name="optradio" checked>Option 1
-						</label>
-						{{#each tours}}
-  						<div class="list-item-entry">
-					        <div class="hotel-item style-10 bg-white">
-					        	<div class="table-view">
-						          	<div class="radius-top cell-view">
-						          	 	<img src="img/tour_list/flight_grid_1.jpg" alt="">	          	 	 
-						          	</div>
-						          	<div class="title hotel-middle cell-view">
-							            <h5><a href="/tour/edit/{{id}}" class="btn-floating halfway-fab red">Edit Tour</a></h5>
-							            <h6 class="color-grey-3 list-hidden">one way flights</h6>
-						          	    <h4><b>{{title}}</b></h4>
-						          	    <p class="list-hidden">Book now and <span class="color-red-3">save 30%</span></p>
-						          	    <div class="fi_block grid-hidden row row10">
-						          	    	{{description}}
-						          	    </div>
-							            <a href="#" class="c-button b-40 bg-red-3 hv-red-3-o">book now</a>
-							            <a href="/tour/show/{{id}}" class="c-button b-40 color-grey-3 hv-o fr"><img src="img/flag_icon_grey.png" alt="">view more</a>
-						            	<a href="/tour/delete/{{id}}" class="c-button b-40 color-red-3 hv-o fr">X</a>
+					<div class="list-wrapper bg-grey-2">
+						<div class="container">
+							<div class="row">
+								<div class="col-xs-12 col-sm-4 col-md-3">
+									<div class="sidebar bg-white clearfix">
+										<div class="sidebar-block">
+											<form action="/tour/recherche">
+											<h4 class="sidebar-title color-dark-2">search</h4>
+											<div class="search-inputs">
+												<div class="form-block clearfix">
+													<div class="input-style-1 b-50 color-3">
+														<img src="img/loc_icon_small_grey.png" alt="">
+														<input type="text" placeholder="Where do you want to go?" required="" name="search">
+													</div>
+												</div>							
+												<div class="form-block clearfix">
+													<div class="input-style-1 b-50 color-3">
+														<img src="img/calendar_icon_grey.png" alt="">
+														<input type="text" placeholder="Check In" class="datepicker">
+													</div>					
+												</div>
+												<div class="form-block clearfix">
+													<div class="input-style-1 b-50 color-3">
+														<img src="img/calendar_icon_grey.png" alt="">
+														<input type="text" placeholder="Check Out" class="datepicker">
+													</div>					
+												</div>
+											</div>
+											<input type="submit" class="c-button b-40 bg-dr-blue-2 hv-dr-blue-2-o" value="search">				
+											</form>
+										</div>
+										
+										<div class="sidebar-block">
+											<h4 class="sidebar-title color-dark-2">Tour Duration</h4>
+											<div class="slider-range color-3 clearfix" data-counter=" NIGNT" data-position="end" data-from="0" data-to="7" data-min="0" data-max="9">
+												<div class="range"></div>
+												<input type="text" class="amount-start" readonly value="0 NIGNT">
+												<input type="text" class="amount-end" readonly value="7 NIGNT">						
+											</div>
+											<input type="submit" class="c-button b-40 bg-dr-blue-2 hv-dr-blue-2-o" value="search">				
+										</div>
+																						
+										<div class="sidebar-block">
+											<h4 class="sidebar-title color-dark-2">Review Score</h4>
+											<div class="sidebar-score">
+												<div class="input-entry type-2 color-6">
+													<input class="checkbox-form" id="score-5" type="checkbox" name="checkbox" value="climat control">
+													<label class="clearfix" for="score-5" >
+														<span class="checkbox-text">
+															5
+															<span class="rate">
+																<span class="fa fa-star color-yellow"></span>
+															</span>
+														</span>									
+														<span class="sp-check"><i class="fa fa-check"></i></span>
+													</label>
+												</div>
+												<div class="input-entry type-2 color-6">
+													<input class="checkbox-form" id="score-4" type="checkbox" name="checkbox" value="climat control">
+													<label class="clearfix" for="score-4" >
+														<span class="checkbox-text">
+															4
+															<span class="rate">
+																<span class="fa fa-star color-yellow"></span>
+															</span>
+														</span>									
+														<span class="sp-check"><i class="fa fa-check"></i></span>
+													</label>
+												</div>
+												<div class="input-entry type-2 color-6">
+													<input class="checkbox-form" id="score-3" type="checkbox" name="checkbox" value="climat control">
+													<label class="clearfix" for="score-3" >
+														<span class="checkbox-text">
+															3
+															<span class="rate">
+																<span class="fa fa-star color-yellow"></span>
+															</span>
+														</span>									
+														<span class="sp-check"><i class="fa fa-check"></i></span>
+													</label>
+												</div>
+												<div class="input-entry type-2 color-6">
+													<input class="checkbox-form" id="score-2" type="checkbox" name="checkbox" value="climat control">
+													<label class="clearfix" for="score-2" >
+														<span class="checkbox-text">
+															2
+															<span class="rate">
+																<span class="fa fa-star color-yellow"></span>
+															</span>
+														</span>									
+														<span class="sp-check"><i class="fa fa-check"></i></span>
+													</label>
+												</div>
+												<div class="input-entry type-2 color-6">
+													<input class="checkbox-form" id="score-1" type="checkbox" name="checkbox" value="climat control">
+													<label class="clearfix" for="score-1" >
+														<span class="checkbox-text">
+															1
+															<span class="rate">
+																<span class="fa fa-star color-yellow"></span>
+															</span>
+														</span>									
+														<span class="sp-check"><i class="fa fa-check"></i></span>
+													</label>
+												</div>
+											</div>							
+										</div>					
 									</div>
-						            <div class="title hotel-right clearfix cell-view grid-hidden">
-					          	        <div class="hotel-right-text color-dark-2">Duration</div>
-					          	        <div class="hotel-right-text color-dark-2">{{duration}} days</div>
-						            </div>						            
-					            </div>
-					        </div>					
-  						</div>
-  						{{else}}
-							<p>No Tours found</p>
-						{{/each}} 						 						   						 						  						  						  						  						  						   						  						  						  						  						 						   						 						   						 						  						   						 						  						
-  					</div>
+								</div>
+							<div class="col-xs-12 col-sm-8 col-md-9">
+								<div class="list-header clearfix">
+									<div class="drop-wrap drop-wrap-s-4 color-4 list-sort">
+									<div class="drop">
+										<b>Sort by price</b>
+											<a href="#" class="drop-list"><i class="fa fa-angle-down"></i></a>
+											<span>
+												<a href="#">ASC</a>
+												<a href="#">DESC</a>
+											</span>
+									</div>
+									</div>
+									<div class="drop-wrap drop-wrap-s-4 color-4 list-sort">
+									<div class="drop">
+										<b>Sort by ranking</b>
+											<a href="#" class="drop-list"><i class="fa fa-angle-down"></i></a>
+											<span>
+												<a href="#">ASC</a>
+												<a href="#">DESC</a>
+											</span>
+									</div>
+									</div>
+									<div class="list-view-change">
+										<div class="change-grid color-3 fr"><i class="fa fa-th"></i></div>
+										<div class="change-list color-3 fr active"><i class="fa fa-bars"></i></div>
+										<div class="change-to-label fr color-grey-8">View:</div>
+									</div>
+								</div>
+								<div class="list-content clearfix">
+									{{#each tours}}
+									<div class="list-item-entry">
+										<div class="hotel-item style-9 bg-white">
+											<div class="table-view">
+												<div class="radius-top cell-view">
+													{{img.data.buffer}}
+													
+													<div class="price price-s-4">{{price}} DHS</div>	          	 	 
+												</div>
+												<div class="title hotel-middle cell-view">
+													<div class="tour-info-line clearfix">
+														<div class="tour-info fl">
+															<img src="img/calendar_icon_grey.png" alt="">
+															<span class="font-style-2 color-grey-3">July <strong>19th 2015</strong></span>
+														</div>
+														<div class="tour-info fl">
+															<img src="img/loc_icon_small_grey.png" alt="">
+															<span class="font-style-2 color-grey-3">alaska</span>
+														</div>						
+													</div>
+													<h4><b>{{title}}</b></h4>
+													<div class="rate-wrap list-hidden">
+														<div class="rate">
+															<span class="fa fa-star color-yellow"></span>
+															<span class="fa fa-star color-yellow"></span>
+															<span class="fa fa-star color-yellow"></span>
+															<span class="fa fa-star color-yellow"></span>
+															<span class="fa fa-star color-yellow"></span>
+														</div>
+														<i>485 rewies</i> 
+													</div>  
+													<p class="f-14 color-grey-3">{{description}}.</p>
+													<div class="buttons-block bg-dr-blue-2">
+														<a href="/tour/show/{{id}}" class="c-button b-40 hv-grey-3-t b-1">details</a>
+														<a href="#" class="c-button b-40 bg-white hv-transparent fr">book now</a>
+													</div>
+												</div>
+												<div class="title hotel-right clearfix cell-view grid-hidden">
+													<div class="rate-wrap">
+														<i>485 rewies</i>
+														<div class="rate">
+															<span class="fa fa-star color-yellow"></span>
+															<span class="fa fa-star color-yellow"></span>
+															<span class="fa fa-star color-yellow"></span>
+															<span class="fa fa-star color-yellow"></span>
+															<span class="fa fa-star color-yellow"></span>
+														</div>
+													</div>						             
+													<div class="hotel-person color-dark-2"><span class="color-blue">{{duration}}</span> days</div>
+													<h5><a href="/tour/edit/{{id}}" class="btn-floating halfway-fab red">Edit Tour</a></h5>
+												</div>						            
+											</div>
+										</div> 						
+									</div>
+									{{else}}
+										<p>No Tours found</p>
+									{{/each}} 
+							 						   						 						  						  						  						  						  						   						  						  						  						  						 						   						 						   						 						  						   						 						  						
+						</div>
 
-  					<div class="c_pagination clearfix padd-120">
-						<a href="#" class="c-button b-40 bg-red-3 hv-red-3-o fl">prev page</a>
-						<a href="#" class="c-button b-40 bg-red-3 hv-red-3-o fr">next page</a>
-						<ul class="cp_content color-4">
-							<li class="active"><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">...</a></li>
-							<li><a href="#">10</a></li>
-						</ul>
-  					</div>
+						<div class="c_pagination clearfix padd-120">
+							<a href="#" class="c-button b-40 bg-red-3 hv-red-3-o fl">prev page</a>
+							<a href="#" class="c-button b-40 bg-red-3 hv-red-3-o fr">next page</a>
+							<ul class="cp_content color-4">
+								<li class="active"><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">...</a></li>
+								<li><a href="#">10</a></li>
+							</ul>
+						</div>
+					</div>
   				</div>
   			</div>
   		</div>
-  	</div>
+
