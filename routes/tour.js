@@ -2,6 +2,11 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const paypal = require('paypal-rest-sdk');
+const fs = require('fs-extra');
+const multer = require('multer');
+const ObjectId = require('mongodb').ObjectId
+const util = require('util')
+const upload = multer({limits: {fileSize: 2000000 },dest:'uploads/'})
 
 paypal.configure({
     'mode': 'sandbox', //sandbox or live
@@ -27,12 +32,13 @@ router.get('/', (req, res) => {
 
 // Show Single Tour
 router.get('/show/:id', (req, res) => {
+    var filename = req.params.id
     Tour.findOne({
-      _id: req.params.id
+      _id: ObjectId(filename)
     })
     .then(tour => {
       res.render('tour/show', {
-        tour: tour
+        tour: tour,
       });
     })
     .catch((err) =>{
@@ -46,29 +52,68 @@ router.get('/add', (req, res) => {
 });
 
 // Process Add Tour
-router.post('/', (req, res) => {
+router.post('/', upload.single('picture'), (req, res) => {
     const numDays = Number(req.body.duration);
     var genDays = req.body.day_;
     console.log(genDays);
     var cpt = 0;
     var dayyys = [];
-    for(var i = 0; i < genDays.length; i++){
-        dayyys.push(genDays[i]);
+    if(genDays.constructor === Array){
+        for(var i = 0; i < genDays.length; i++){
+            dayyys.push(genDays[i]);
+        }
+    }else{
+        dayyys[0] = genDays;
     }
+    
 
-    const newTour = {
-      title: req.body.title,
-      description: req.body.description,
-      duration: req.body.duration,
-      days: dayyys
-    }
+    if (req.file == null) {
+        // If Submit was accidentally clicked with no file selected...
+       res.send('Please select a picture file to submit!');
+     } else { 
+        
+
+        // read the img file from tmp in-memory location
+        var newImg = fs.readFileSync(req.file.path);
+        // encode the file as a base64 string.
+        var encImg = newImg.toString('base64');
+
+        const newTour = {
+            title: req.body.title,
+            description: req.body.description,
+            duration: req.body.duration,
+            days: dayyys,
+            img: {
+                data: Buffer(encImg, 'base64')
+            }
+          }
+          new Tour(newTour)
+          .save()
+          .then(tour => {
+            res.redirect(`/tour/show/${tour.id}`);
+          });
+        /*db.insert(newTour, function(err, result){
+            if (err) { console.log(err); };
+            var newoid = new ObjectId(result.ops[0]._id);
+            fs.remove(req.file.path, function(err) {
+            if (err) { console.log(err) };
+            res.redirect(`/tour/show/${tour.id}`);
+            });
+        });*/
+     }
+
+    
+
+    
   
     // Create Tour
-    new Tour(newTour)
+    /*new Tour(newTour)
       .save()
       .then(tour => {
         res.redirect(`/tour/show/${tour.id}`);
-      });
+      });*/
+    
+      
 });
 
 
@@ -132,27 +177,53 @@ router.get('/recherche', (req, res) => {
 // Partial Search Form Process
 router.get("/recherche", function(req, res, next) {
     var searchWord = req.query.search;
+    var searchOpt = 'days';
     var data = [];
 
-    Tour.find({
-        title: {
-            $regex: new RegExp(searchWord)
-        }
-    }, {
-        _id: 0,
-        __v: 0
-    }, function(err, data){
-        //res.json(data);
-        res.render('tour/index',{
-            tours : data
-        });
-    }).limit(10)
+    if(searchOpt == 'days'){
+        Tour.find({
+            days: {
+                $regex: new RegExp(searchWord)
+            }
+        }, {
+            _id: 0,
+            __v: 0
+        }, function(err, data){
+            res.render('tour/index',{
+                tours : data
+            });
+        }).limit(10)
+    }
+    else if(searchOpt == 'title'){
+        Tour.find({
+            title: {
+                $regex: new RegExp(searchWord)
+            }
+        }, {
+            _id: 0,
+            __v: 0
+        }, function(err, data){
+            res.render('tour/index',{
+                tours : data
+            });
+        }).limit(10)
+    }
+
+    
     
     
 });
 
+/* Handle images
+app.post('/api/photo',function(req,res){
+    var newItem = new Item();
+    newItem.img.data = fs.readFileSync(req.files.userPhoto.path)
+    newItem.img.contentType = 'image/png';
+    newItem.save();
+   });
 
-//
+
+*/
  
 /*function pagelist(items) {
     result = "<html><body><ul>";

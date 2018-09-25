@@ -13,7 +13,11 @@ const TourSchema = new Schema({
   duration: {
     type: Number
   },
-  days: [ String ]
+  days: [ String ],
+  img: { 
+    data: Buffer,
+    contentType: String
+  }
 });
 
 // Create collection and add schema

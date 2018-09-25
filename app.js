@@ -9,6 +9,7 @@ const hbs = require('handlebars');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const cookieParser = require('cookie-parser');
+
 const app = express();
 var countries = require ('full-countries-cities').getCountryNames(); 
 var cities = require ('full-countries-cities');  
@@ -78,6 +79,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false 
 }));
+
 
 // Passport Middleware
 app.use(passport.initialize());

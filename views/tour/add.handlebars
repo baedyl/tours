@@ -4,7 +4,7 @@
 	<div class="container">
        	<div class="row padd-90">
        		<div class="col-xs-12 col-md-8">
-				<form class="simple-from" action="/tour" method="POST">
+				<form class="simple-from" action="/tour" method="POST" enctype="multipart/form-data">
 					<div class="simple-group">
 						<h3 class="small-title">Add Tour</h3>
 						<div class="row">
@@ -22,6 +22,14 @@
 									<div class="form-label color-dark-2">Description</div>
 									<div class="input-style-1 b-50 brd-0 type-2 color-3">
 										<input name="description" type="text" placeholder="Enter description">
+									</div>
+								</div>							
+							</div>
+							<div class="col-xs-6 col-sm-6">
+								<div class="form-block type-2 clearfix">
+									<div class="form-label color-dark-2">Image</div>
+									<div class="input-style-1 b-50 brd-0 type-2 color-3">
+										<input type="file" name="picture" accept="application/x-zip-compressed,image/*">
 									</div>
 								</div>							
 							</div>
